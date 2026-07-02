@@ -9,10 +9,7 @@ This project implements a secure MQTT communication system for industrial IoT en
 - **Non-Repudiation** through digital signatures
 
 ## 🏗️ System Architecture
-Robot (Sender) ---[TLS + Certificates]---> Mosquitto Broker ---> Receiver (Subscriber)
-|
-v
-JWT Token Validation
+┌─────────────┐ TLS + Cert ┌──────────────┐ │ Robot #1 │ ──────────────────▶│ Mosquitto │ │ (Sender) │ ◀─────────────────│ Broker │ └─────────────┘ └──────────────┘ │ │ │ │ ▼ ▼ ┌─────────────┐ ┌──────────────┐ │ Sensor │ │ JWT Token │ │ Data │ │ Validation │ └─────────────┘ └──────────────┘
 
 ## 🔒 Security Features
 | Feature | Implementation |
